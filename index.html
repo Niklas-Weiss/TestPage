@@ -18,46 +18,60 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            position: relative;
         }
         h1 {
-            color: #4CAF50;
+            color: #dcdcdc;
         }
-        .btn {
-            background-color: #FFD700;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
+        .ip {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700;
         }
-        .random-img {
-            max-width: 300px;
-            display: none;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        .button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
+        }
+        button {
+            background-color: #dcdcdc;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #image-container {
+            margin-top: 20px;
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Moin!</h1>
-        <button class="btn" onclick="showRandomImage()">Press</button>
-        <img id="randomImg" class="random-img" src="" alt="Random Image">
+        <div class="button-container">
+            <button onclick="showRandomImage()">Press</button>
+        </div>
+        <div id="image-container">
+            <img id="random-image" src="" alt="Random Image">
+        </div>
     </div>
-    
     <script>
         function showRandomImage() {
-            const images = ['pics/image1.jpg', 'pics/image2.jpg', 'pics/image3.jpg']; // Pfade zu den Bildern
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const imgElement = document.getElementById('randomImg');
+            let images = ["pics/image1.jpg", "pics/image2.jpg", "pics/image3.jpg"];
+            let randomIndex = Math.floor(Math.random() * images.length);
+            let imgElement = document.getElementById("random-image");
             imgElement.src = images[randomIndex];
-            imgElement.style.display = 'block';
+            document.getElementById("image-container").style.display = "block";
             
             setTimeout(() => {
-                imgElement.style.display = 'none';
+                document.getElementById("image-container").style.display = "none";
             }, 10000);
         }
     </script>
