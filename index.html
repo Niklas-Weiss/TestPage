@@ -44,6 +44,7 @@
         #image-container {
             margin-top: 20px;
             display: none;
+            position: absolute;
         }
         img {
             max-width: 100%;
@@ -68,10 +69,21 @@
             let randomIndex = Math.floor(Math.random() * images.length);
             let imgElement = document.getElementById("random-image");
             imgElement.src = images[randomIndex];
-            document.getElementById("image-container").style.display = "block";
+            
+            // Zufällige Position
+            let randomX = Math.floor(Math.random() * (window.innerWidth - imgElement.width));
+            let randomY = Math.floor(Math.random() * (window.innerHeight - imgElement.height));
+            
+            // Setze die Position des Bildes
+            let imageContainer = document.getElementById("image-container");
+            imageContainer.style.left = randomX + 'px';
+            imageContainer.style.top = randomY + 'px';
+            
+            // Zeige das Bild an
+            imageContainer.style.display = "block";
             
             setTimeout(() => {
-                document.getElementById("image-container").style.display = "none";
+                imageContainer.style.display = "none";
             }, 10000);
         }
     </script>
