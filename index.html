@@ -12,6 +12,7 @@
             color: white;
             padding: 50px;
             position: relative;
+            overflow: hidden;
         }
         .container {
             max-width: 600px;
@@ -39,12 +40,11 @@
             cursor: pointer;
             font-size: 16px;
         }
-        #image-container {
-            display: none;
+        .image-container {
             position: absolute;
         }
-        img {
-            max-width: 200px; /* Maximale Bildgröße */
+        .random-image {
+            max-width: 200px;
             height: auto;
             border-radius: 10px;
             position: absolute;
@@ -58,44 +58,40 @@
             <button id="spawnButton" onclick="showRandomImage()">Press</button>
         </div>
     </div>
-    <div id="image-container">
-        <img id="random-image" src="" alt="Random Image">
-    </div>
 
     <script>
-        let imageTimeout; // Speichert das Timeout, damit es nicht überschrieben wird
-
         function showRandomImage() {
             let images = ["pics/Kakerlake.PNG", "pics/Niklas2.PNG", "pics/spoinkbob.jpg", "pics/Strohballen.png"];
             let randomIndex = Math.floor(Math.random() * images.length);
-            let imgElement = document.getElementById("random-image");
-            let imageContainer = document.getElementById("image-container");
             let button = document.getElementById("spawnButton");
 
-            imgElement.src = images[randomIndex];
+            let newImg = document.createElement("img");
+            newImg.src = images[randomIndex];
+            newImg.classList.add("random-image");
+
+            let maxWidth = window.innerWidth - 200; 
+            let maxHeight = window.innerHeight - 200;
 
             let buttonRect = button.getBoundingClientRect();
-            let maxWidth = window.innerWidth - imgElement.width;
-            let maxHeight = window.innerHeight - imgElement.height;
-
             let randomX, randomY;
             do {
                 randomX = Math.floor(Math.random() * maxWidth);
                 randomY = Math.floor(Math.random() * maxHeight);
             } while (
                 randomX < buttonRect.right && 
-                randomX + imgElement.width > buttonRect.left &&
+                randomX + 200 > buttonRect.left &&
                 randomY < buttonRect.bottom &&
-                randomY + imgElement.height > buttonRect.top
+                randomY + 200 > buttonRect.top
             );
 
-            imageContainer.style.left = randomX + 'px';
-            imageContainer.style.top = randomY + 'px';
-            imageContainer.style.display = "block";
+            newImg.style.left = randomX + 'px';
+            newImg.style.top = randomY + 'px';
+            newImg.style.position = "absolute";
 
-            clearTimeout(imageTimeout);
-            imageTimeout = setTimeout(() => {
-                imageContainer.style.display = "none";
+            document.body.appendChild(newImg);
+
+            setTimeout(() => {
+                newImg.remove();
             }, 10000);
         }
     </script>
