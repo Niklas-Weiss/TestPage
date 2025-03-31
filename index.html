@@ -61,8 +61,24 @@
 
     <script>
         function showRandomImage() {
-            let images = ["pics/Kakerlake.PNG", "pics/Niklas2.PNG", "pics/spoinkbob.jpg", "pics/Strohballen.png", "pics/patrick.jpg", "pics/rufus-kim-possible.gif", "pics/sus.jpg", "pics/Thaddeus.PNG", "pics/Trollface.png"];
-            let randomIndex = Math.floor(Math.random() * images.length);
+            let images = [
+                "pics/Kakerlake.PNG",
+                "pics/Niklas2.PNG",
+                "pics/spoinkbob.jpg",
+                "pics/Strohballen.png",
+                "pics/patrick.jpg",
+                "pics/rufus-kim-possible.gif",
+                "pics/sus.jpg",
+                "pics/Thaddeus.PNG",
+                "pics/Trollface.png",
+                "pics/blinking_guy_meme.gif", // hinzugefügt
+                "pics/buff.gif", // hinzugefügt
+                "pics/dreieck.gif", // hinzugefügt
+                "pics/puh.gif", // hinzugefügt
+                "pics/sus2.gif", // hinzugefügt
+                "pics/sus3.gif", // hinzugefügt
+                "pics/sus4.gif" // hinzugefügt
+            ];let randomIndex = Math.floor(Math.random() * images.length);
             let button = document.getElementById("spawnButton");
 
             let newImg = document.createElement("img");
