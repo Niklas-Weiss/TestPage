@@ -30,14 +30,19 @@
             display: flex;
             justify-content: center;
             margin-top: 20px;
+            position: relative;
+            z-index: 20;
         }
         button {
-            background-color: transparent;
+            background-color: #dcdcdc;
+            color: black;
+            padding: 10px 20px;
             border: none;
-            width: 60px;
-            height: 60px;
+            border-radius: 5px;
             cursor: pointer;
-            position: absolute;
+            font-size: 16px;
+            position: relative;
+            z-index: 10;
         }
         .image-container {
             position: absolute;
@@ -54,13 +59,9 @@
     <div class="container">
         <h1>Moin!</h1>
         <div class="button-container">
-            <!-- Button ohne Text -->
-            <button id="spawnButton" onclick="showRandomImage()"> </button>
+            <button id="spawnButton" onclick="showRandomImage()">Press</button>
         </div>
     </div>
-
-    <!-- Bruh Sound -->
-    <audio id="bruhSound" src="sounds/bruh.mp3"></audio>
 
     <script>
         function showRandomImage() {
@@ -113,16 +114,6 @@
             setTimeout(() => {
                 newImg.remove();
             }, 10000);
-
-            // Bruh Sound abspielen
-            let bruhSound = document.getElementById("bruhSound");
-            bruhSound.play();
-
-            // Button an zufällige Position verschieben
-            let randomButtonX = Math.floor(Math.random() * maxWidth);
-            let randomButtonY = Math.floor(Math.random() * maxHeight);
-            button.style.left = randomButtonX + 'px';
-            button.style.top = randomButtonY + 'px';
         }
     </script>
 </body>
