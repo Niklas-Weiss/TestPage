@@ -29,6 +29,7 @@
         .button-container {
             display: flex;
             justify-content: center;
+            gap: 20px;
             margin-top: 20px;
             position: relative;
             z-index: 20;
@@ -44,15 +45,6 @@
             position: relative;
             z-index: 10;
         }
-        .image-container {
-            position: absolute;
-        }
-        .random-image {
-            max-width: 200px;
-            height: auto;
-            border-radius: 10px;
-            position: absolute;
-        }
     </style>
 </head>
 <body>
@@ -60,28 +52,18 @@
         <h1>Moin!</h1>
         <div class="button-container">
             <button id="spawnButton" onclick="showRandomImage()">Press</button>
+            <button id="soundButton" onclick="playSound()">Sound</button>
         </div>
     </div>
 
     <script>
         function showRandomImage() {
             let images = [
-                "pics/Kakerlake.PNG",
-                "pics/Niklas2.PNG",
-                "pics/spoinkbob.jpg",
-                "pics/Strohballen.png",
-                "pics/patrick.jpg",
-                "pics/rufus-kim-possible.gif",
-                "pics/sus.jpg",
-                "pics/Thaddeus.PNG",
-                "pics/Trollface.png",
-                "pics/blinking_guy_meme.gif", // hinzugefügt
-                "pics/buff.gif", // hinzugefügt
-                "pics/dreieck.gif", // hinzugefügt
-                "pics/puh.gif", // hinzugefügt
-                "pics/sus2.gif", // hinzugefügt
-                "pics/sus3.gif", // hinzugefügt
-                "pics/sus4.gif" // hinzugefügt
+                "pics/Kakerlake.PNG", "pics/Niklas2.PNG", "pics/spoinkbob.jpg",
+                "pics/Strohballen.png", "pics/patrick.jpg", "pics/rufus-kim-possible.gif",
+                "pics/sus.jpg", "pics/Thaddeus.PNG", "pics/Trollface.png",
+                "pics/blinking_guy_meme.gif", "pics/buff.gif", "pics/dreieck.gif",
+                "pics/puh.gif", "pics/sus2.gif", "pics/sus3.gif", "pics/sus4.gif"
             ];
             let randomIndex = Math.floor(Math.random() * images.length);
             let button = document.getElementById("spawnButton");
@@ -114,6 +96,29 @@
             setTimeout(() => {
                 newImg.remove();
             }, 10000);
+        }
+
+        function playSound() {
+            let sounds = [
+                "sounds/sound1.mp3", "sounds/sound2.mp3", "sounds/sound3.mp3"
+            ];
+            let randomIndex = Math.floor(Math.random() * sounds.length);
+            let audio = new Audio(sounds[randomIndex]);
+            audio.play();
+            moveSoundButton();
+        }
+
+        function moveSoundButton() {
+            let button = document.getElementById("soundButton");
+            let maxWidth = window.innerWidth - button.offsetWidth;
+            let maxHeight = window.innerHeight - button.offsetHeight;
+            
+            let randomX = Math.floor(Math.random() * maxWidth);
+            let randomY = Math.floor(Math.random() * maxHeight);
+            
+            button.style.position = "absolute";
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
         }
     </script>
 </body>
