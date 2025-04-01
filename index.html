@@ -128,8 +128,8 @@
 
         function moveSoundButton() {
             let button = document.getElementById("soundButton");
-            let maxWidth = window.innerWidth - button.offsetWidth;
-            let maxHeight = window.innerHeight - button.offsetHeight;
+            let maxWidth = window.innerWidth - button.offsetWidth - 20;
+            let maxHeight = window.innerHeight - button.offsetHeight - 20;
             
             let randomX = Math.max(0, Math.min(Math.floor(Math.random() * maxWidth), maxWidth));
             let randomY = Math.max(0, Math.min(Math.floor(Math.random() * maxHeight), maxHeight));
