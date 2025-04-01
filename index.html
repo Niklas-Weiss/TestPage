@@ -128,22 +128,23 @@
 
         function moveSoundButton() {
             let button = document.getElementById("soundButton");
-            
-            // Stelle sicher, dass das Button-Element absolut positioniert ist
-            button.style.position = "absolute";
 
-            // Berechne die maximalen Werte, sodass der Button nicht außerhalb des sichtbaren Bereichs geht
-            let maxX = window.innerWidth - button.offsetWidth - 10; // 10px als Sicherheitspuffer
-            let maxY = window.innerHeight - button.offsetHeight - 10;
+            // Sicherstellen, dass der Button relativ zum Viewport positioniert wird
+            button.style.position = "fixed";
 
-            // Wähle eine zufällige Position innerhalb des sicheren Bereichs
+            // Berechne die maximalen X- und Y-Werte, sodass der Button im Fenster bleibt
+            let maxX = window.innerWidth - button.offsetWidth - 20; // 20px Sicherheitspuffer
+            let maxY = window.innerHeight - button.offsetHeight - 20;
+
+            // Zufällige Koordinaten generieren
             let randomX = Math.floor(Math.random() * maxX);
             let randomY = Math.floor(Math.random() * maxY);
 
-            // Setze die neue Position des Buttons
+            // Position des Buttons setzen
             button.style.left = `${randomX}px`;
             button.style.top = `${randomY}px`;
         }
+
 
     </script>
 </body>
