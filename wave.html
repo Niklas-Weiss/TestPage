@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave - Projekt</title>
+    <style>
+        :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa7bf;--accent:#7c3aed}
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071025 0%,#081226 60%)}
+        .container{max-width:1200px;margin:32px auto;padding:24px}
+        header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+        nav a{color:var(--muted);margin-left:14px;text-decoration:none}
+        
+        .project-hero{margin-bottom:40px}
+        .project-hero h1{font-size:clamp(28px,4vw,48px);margin:0 0 15px 0;color:var(--accent)}
+        .project-hero p{color:var(--muted);font-size:1.1rem;line-height:1.8;margin:0}
+        
+        section{margin-bottom:45px}
+        section h3{color:var(--accent);margin:0 0 20px 0;font-size:1.5rem}
+        section > p{color:var(--muted);line-height:1.8;margin:0 0 15px 0}
+        
+        .workflow-card{background:rgba(124,58,237,0.1);border-left:4px solid var(--accent);padding:20px;border-radius:8px;margin-bottom:15px}
+        .workflow-card h4{color:var(--accent);margin:0 0 10px 0;font-size:1.1rem}
+        .workflow-card p{color:var(--muted);margin:0;line-height:1.6}
+        .workflow-card .step{color:var(--muted);margin-top:12px;padding-left:20px}
+        .workflow-card .step::before{content:"→ ";color:var(--accent);font-weight:bold;margin-left:-20px}
+        
+        .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:30px}
+        .feature{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;border-top:2px solid var(--accent)}
+        .feature h4{margin:0 0 10px 0;color:var(--accent);font-size:1.05rem}
+        .feature p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
+        
+        .tech-stack{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;margin-bottom:30px}
+        .tech-stack h3{margin-top:0}
+        .tech-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+        .tech-tag{background:rgba(124,58,237,0.2);color:var(--accent);padding:6px 12px;border-radius:20px;font-size:0.9rem}
+        
+        .use-case{background:rgba(255,255,255,0.03);padding:18px;border-radius:8px;margin-bottom:12px;border-left:3px solid var(--accent)}
+        .use-case h5{color:var(--accent);margin:0 0 8px 0}
+        .use-case p{color:var(--muted);margin:0;font-size:0.95rem}
+        
+        footer{margin-top:48px;color:var(--muted);font-size:0.9rem;padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">NW</div>
+                <div>
+                    <div style="font-weight:700">Niklas Weiß</div>
+                    <div class="muted" style="font-size:0.85rem">Full-Stack · Backend · Developer</div>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html">Portfolio</a>
+                <a href="pong.html">Pong</a>
+                <a href="random/index.html">Zufallseite</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="project-hero">
+                <h1>🌊 Wave</h1>
+                <p>Eine webbasierte Workflow- und Formular-Management-Plattform. Benutzer können eigenständig Workflows anlegen, andere Nutzer einladen und benutzerdefinierte Formulare erstellen, die in den Workflows verwendet werden können. Die Lösung ermöglicht strukturierte Zusammenarbeit mit flexiblen, skalierbaren Formularen.</p>
+            </section>
+
+            <section>
+                <h3>Kernkonzept: Workflows & Formulare</h3>
+                <p>Wave basiert auf einem einfachen aber mächtigen Konzept:</p>
+                
+                <div class="workflow-card">
+                    <h4>📋 Workflows</h4>
+                    <p>Jeder Benutzer kann Workflows erstellen - Prozesse, die mehrere Schritte und Beteiligte koordinieren.</p>
+                    <div class="step">Workflow-Besitzer (Admin) erstellt und verwaltet den Workflow</div>
+                    <div class="step">Admin lädt andere Benutzer in den Workflow ein</div>
+                    <div class="step">Eingeladene Benutzer können dann die Workflows durchführen</div>
+                </div>
+
+                <div class="workflow-card">
+                    <h4>📝 Benutzerdefinierte Formulare</h4>
+                    <p>Formulare sind das Herzstück jedes Workflows - sie ermöglichen strukturierte Dateneingabe.</p>
+                    <div class="step">Workflow-Admin erstellt Custom-Formulare durch Anklicken von Bausteinen</div>
+                    <div class="step">Verschiedene Feldtypen (Text, Zahlen, Dropdown, etc.) können flexibel kombiniert werden</div>
+                    <div class="step">Eingeladene Nutzer füllen die Formulare gemäß Workflow-Anforderungen aus</div>
+                </div>
+
+                <div class="workflow-card">
+                    <h4>👥 Collaborative Workflows</h4>
+                    <p>Workflows ermöglichen echte Zusammenarbeit mit Rollenverwaltung.</p>
+                    <div class="step">Verschiedene Rollen können unterschiedliche Zugriffsrechte haben</div>
+                    <div class="step">Nutzer sehen nur die Workflows/Formulare, für die sie berechtigt sind</div>
+                    <div class="step">Workflow-Historie und Audit-Trail für vollständige Nachverfolgung</div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Hauptfunktionalitäten</h3>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h4>🎨 Formular-Builder</h4>
+                        <p>Intuitive Erstellung von Custom-Formularen durch Anklicken von Bausteinen. Unterstützung für Text, Zahlen, Dropdown, Checkboxes, Datepicker und mehr.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🔗 Workflow-Orchestrierung</h4>
+                        <p>Verbinde mehrere Formulare in einem Workflow. Definiere Abläufe, Bedingungen und automatische Übergänge zwischen Workflow-Stufen.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>👤 Benutzer-Management</h4>
+                        <p>Workflow-Besitzer können andere Benutzer einladen und deren Rollen/Zugriffsrechte granular einstellen. Devise-basierte sichere Authentifizierung.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>📊 Datenerfassung & Verwaltung</h4>
+                        <p>Verwaltung aller ausgefüllten Formulare in einem zentralen Bereich. Benutzer können ihre eigenen Formularausfüllungen einsehen und verwalten.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🔐 Sicherheit & Berechtigungen</h4>
+                        <p>Rollenbasierte Zugriffskontrolle (RBAC). Jeder Benutzer sieht nur die Daten, die ihm gehören oder freigegeben wurden.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>📱 Responsive Design</h4>
+                        <p>Vollständig responsive Benutzeroberfläche mit Tailwind CSS. Workflows können auf Desktop, Tablet und Mobile bearbeitet werden.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Use Cases & Anwendungsszenarien</h3>
+                
+                <div class="use-case">
+                    <h5>Projektmanagement</h5>
+                    <p>Erstelle einen Workflow für Projektanträge mit Formularen für Anforderungen, Budget, Timeline. Team-Mitglieder füllen diese aus, PM verwaltet und koordiniert.</p>
+                </div>
+
+                <div class="use-case">
+                    <h5>Onboarding neuer Mitarbeiter</h5>
+                    <p>Strukturierter Onboarding-Workflow mit Formularen für persönliche Daten, IT-Ausrüstung, Schulungen. Alle Schritte sind automatisiert und nachverfolgbar.</p>
+                </div>
+
+                <div class="use-case">
+                    <h5>Genehmigungsprozesse</h5>
+                    <p>Multi-Level-Genehmigungsworkflows mit Custom-Formularen für Urlaub, Spesen, Einkauf. Automatische Eskalation und Benachrichtigungen.</p>
+                </div>
+
+                <div class="use-case">
+                    <h5>Datenerfassung & Umfragen</h5>
+                    <p>Erstelle Custom-Umfrage-Formulare und stelle diese in Workflows zur Verfügung. Zentrale Verwaltung aller Antworten mit Analytics.</p>
+                </div>
+
+                <div class="use-case">
+                    <h5>Quality Assurance & Checklisten</h5>
+                    <p>QA-Teams verwenden strukturierte Formulare als Checklisten. Workflows tracken den Status jeder QA-Aktivität.</p>
+                </div>
+            </section>
+
+            <section class="tech-stack">
+                <h3>Technologie Stack</h3>
+                <div class="tech-list">
+                    <span class="tech-tag">Ruby on Rails</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Docker & Docker Compose</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Devise Auth</span>
+                    <span class="tech-tag">RESTful API</span>
+                    <span class="tech-tag">ActiveRecord ORM</span>
+                </div>
+            </section>
+
+            <section>
+                <h3>Architektur-Highlights</h3>
+                <p>Wave ist auf Best Practices aufgebaut:</p>
+                <ul style="color:var(--muted);line-height:1.8">
+                    <li><strong>Modular:</strong> Workflows und Formulare sind unabhängig und wiederverwendbar</li>
+                    <li><strong>Skalierbar:</strong> PostgreSQL mit optimierten Queries für große Datenmengen</li>
+                    <li><strong>Sicher:</strong> CSRF-Schutz, SQL-Injection Prevention, sichere Authentifizierung</li>
+                    <li><strong>Wartbar:</strong> Klare MVC-Struktur mit ausführlich dokumentiertem Code</li>
+                    <li><strong>Testbar:</strong> Umfangreiche Test-Suite für alle kritischen Funktionen</li>
+                    <li><strong>Produktionsreif:</strong> Health Checks, Error Handling, Logging und Monitoring</li>
+                </ul>
+            </section>
+
+            <footer>
+                <div style="margin-bottom:12px">© 2026 Niklas Weiß — Wave Project</div>
+                <div class="muted">Ein SW-Labor Projekt der Hochschule Heilbronn</div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
