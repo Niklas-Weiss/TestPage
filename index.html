@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Portfolio von Niklas Weiß — Platzhalter-Seite. Ersetze Inhalte mit deinen Projekten.">
-  <title>Niklas Weiß — Portfolio (Platzhalter)</title>
+  <title>Niklas Weiß — Portfolio</title>
 
   <!-- Favicon (optional) -->
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -26,13 +26,13 @@
     :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa7bf;--accent:#7c3aed}
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071025 0%,#081226 60%)}
-    .container{max-width:1100px;margin:32px auto;padding:24px}
+    .container{max-width:1100px;margin:16px auto;padding:24px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
     nav a{color:var(--muted);margin-left:14px;text-decoration:none}
 
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin-top:36px}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin-top:20px}
     .hero .intro h1{font-size:clamp(22px,4vw,40px);margin:0}
     .hero .intro p{color:var(--muted);margin-top:8px}
     .buttons{margin-top:18px}
@@ -65,7 +65,6 @@
       <nav>
         <a href="pong.html">Pong</a>
         <a href="wave.html">Wave</a>
-        <a href="random/index.html">Zufallseite</a>
       </nav>
     </header>
 
@@ -73,7 +72,6 @@
       <section class="intro">
         <h1>Hi — ich bin <span style="color:var(--accent)">Niklas Weiß</span>,
           und das ist mein persönliches Portfolio - enjoy!</h1>
-        <p class="muted">Dies ist eine Platzhalter-Portfolioseite, bereit um mit deinem Inhalt gefüllt zu werden. Ersetze Texte, Bilder und Links.</p>
         <div class="buttons">
           <a class="btn btn-primary" href="#projects">Meine Projekte</a>
           <a class="btn btn-ghost" href="#contact">Kontakt</a>
@@ -92,7 +90,7 @@
 
             <!-- Platzhalter-Projekt 2 -->
             <article class="card">
-              <img class="project-img" src="https://via.placeholder.com/640x360?text=Projekt+2" alt="Platzhalter Projekt 2">
+              <svg class="project-img" viewBox="0 0 640 360" style="background:#1a1a2e"><text x="50%" y="50%" fill="#666" text-anchor="middle" dy=".3em" font-size="24">Projekt 2</text></svg>
               <h3>Projekt 2 — Platzhalter</h3>
               <p class="muted">Kurzbeschreibung: Ersetze durch eine echte Projektbeschreibung.</p>
               <p style="margin-top:8px"><a href="#" class="muted">Mehr erfahren →</a></p>
@@ -100,7 +98,7 @@
 
             <!-- Platzhalter-Projekt 3 -->
             <article class="card">
-              <img class="project-img" src="https://via.placeholder.com/640x360?text=Projekt+3" alt="Platzhalter Projekt 3">
+              <svg class="project-img" viewBox="0 0 640 360" style="background:#1a1a2e"><text x="50%" y="50%" fill="#666" text-anchor="middle" dy=".3em" font-size="24">Projekt 3</text></svg>
               <h3>Projekt 3 — Platzhalter</h3>
               <p class="muted">Kurzbeschreibung: Ersetze durch eine echte Projektbeschreibung.</p>
               <p style="margin-top:8px"><a href="#" class="muted">Mehr erfahren →</a></p>
@@ -108,7 +106,7 @@
 
             <!-- Platzhalter-Projekt 4 -->
             <article class="card">
-              <img class="project-img" src="https://via.placeholder.com/640x360?text=Projekt+4" alt="Platzhalter Projekt 4">
+              <svg class="project-img" viewBox="0 0 640 360" style="background:#1a1a2e"><text x="50%" y="50%" fill="#666" text-anchor="middle" dy=".3em" font-size="24">Projekt 4</text></svg>
               <h3>Projekt 4 — Platzhalter</h3>
               <p class="muted">Kurzbeschreibung: Ersetze durch eine echte Projektbeschreibung.</p>
               <p style="margin-top:8px"><a href="#" class="muted">Mehr erfahren →</a></p>
@@ -119,22 +117,61 @@
       </section>
 
       <aside style="padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px">
-        <div style="font-weight:700;font-size:1.1rem">Kurz über mich</div>
-        <p class="muted" style="margin-top:10px">Platzhalter Bio: Nenne hier in 2–3 Sätzen, wer du bist und was du anbietest.</p>
+        <div style="font-weight:700;font-size:1.1rem">Niklas Weiß</div>
+        <p class="muted" style="margin-top:10px">Full-Stack & Backend Developer mit Leidenschaft für moderne Webentwicklung, containerisierte Systeme und innovative Lösungen.</p>
 
         <div style="margin-top:18px">
-          <div style="font-weight:700">Fähigkeiten</div>
-          <ul class="muted" style="padding-left:18px;margin-top:8px">
-            <li>Webentwicklung (HTML/CSS/JS)</li>
-            <li>Design & Prototyping</li>
-            <li>Interaktive Interfaces</li>
+          <div style="font-weight:700">Tech-Stack</div>
+          <ul class="muted" style="padding-left:18px;margin-top:8px;font-size:0.9rem">
+            <li><strong>Backend:</strong> Ruby on Rails, Node.js, Java, C, PHP</li>
+            <li><strong>Frontend:</strong> React, Angular, HTML/CSS, JavaScript</li>
+            <li><strong>Datenbanken:</strong> PostgreSQL, SQL</li>
+            <li><strong>DevOps & Systeme:</strong> Docker, Linux, Embedded Systems</li>
+            <li><strong>Game Dev:</strong> Unity, objektorientierte Programmierung</li>
+            <li><strong>APIs:</strong> RESTful API-Entwicklung & Anbindung</li>
           </ul>
         </div>
 
         <div id="contact" style="margin-top:18px">
           <div style="font-weight:700">Kontakt</div>
-          <p class="muted" style="margin-top:8px">E-Mail: <a class="muted" href="mailto:you@example.com">you@example.com</a></p>
-          <p class="muted">LinkedIn / GitHub: <a class="muted" href="#">@yourhandle</a></p>
+          <p class="muted" style="margin-top:8px">E-Mail: <a class="muted" href="mailto:niklas2002@online.de">niklas2002@online.de</a></p>
+        </div>
+
+        <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1)">
+          <div style="font-weight:700;margin-bottom:12px">Werdegang</div>
+          <div style="margin-bottom:15px">
+            <div style="color:var(--accent);font-weight:600;font-size:0.95rem">Hochschule Heilbronn</div>
+            <div class="muted" style="font-size:0.9rem">08/2023 – 02/2027 (voraussichtlich)</div>
+            <div class="muted" style="font-size:0.9rem;margin-top:4px">B.Sc. Software Engineering mit Schwerpunkt Systems Engineering</div>
+          </div>
+          <div style="margin-bottom:15px">
+            <div style="color:var(--accent);font-weight:600;font-size:0.95rem">Werksstudent IT-Abteilung</div>
+            <div class="muted" style="font-size:0.9rem">07/2024 – 04/2025 · CSI Verwaltungs GmbH</div>
+          </div>
+          <div>
+            <div style="color:var(--accent);font-weight:600;font-size:0.95rem">Ausbildung Fachinformatiker</div>
+            <div class="muted" style="font-size:0.9rem">09/2019 – 07/2022 · Pepperl + Fuchs SE</div>
+            <div class="muted" style="font-size:0.9rem;margin-top:4px">Systemintegration</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <div style="font-weight:700;margin-bottom:8px">Erfahrungen</div>
+          <p class="muted" style="margin:0;font-size:0.9rem;line-height:1.5">
+            ✔️ APIs: REST, GraphQL, MQTT, M2MQTT (Unity), WebSockets, JCRP<br>
+            ✔️ Projektmanagement, <br>
+            ✔️ Embedded Systems & hardwarenahe Programmierung<br>
+            ✔️ Game Development mit Unity<br>
+            ✔️ Ticketsysteme & IT-Support (1st/2nd-Level)<br>
+            ✔️ Test-Driven Development (TDD)<br>
+            ✔️ Containerisierung mit Docker<br>
+            ✔️ CI/CD-Grundlagen<br>
+            ✔️ Versionskontrolle mit Git<br>
+            ✔️ Linux-Serveradministration<br>
+            ✔️ Agile Softwareentwicklung mit Scrum<br>
+            ✔️ Software-Architektur & Design Patterns<br>
+            ✔️ Datenbankdesign & SQL<br>
+          </p>
         </div>
       </aside>
     </main>
