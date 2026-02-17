@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            color: #dcdcdc;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 20;
+        }
+        button {
+            background-color: #dcdcdc;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            z-index: 10;
+        }
+        .image-container {
+            position: absolute;
+        }
+        .random-image {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Moin!</h1>
+        <div class="button-container">
+            <button id="spawnButton" onclick="showRandomImage()">Press</button>
+            <button id="soundButton" onclick="playSound()">Sound</button>
+        </div>
+    </div>
+
+    <script>
+        function showRandomImage() {
+            let images = [
+                "../pics/Kakerlake.PNG",
+                "../pics/Niklas2.PNG",
+                "../pics/spoinkbob.jpg",
+                "../pics/Strohballen.png",
+                "../pics/patrick.jpg",
+                "../pics/rufus-kim-possible.gif",
+                "../pics/sus.jpg",
+                "../pics/Thaddeus.PNG",
+                "../pics/Trollface.png",
+                "../pics/blinking_guy_meme.gif", // hinzugefügt
+                "../pics/buff.gif", // hinzugefügt
+                "../pics/dreieck.gif", // hinzugefügt
+                "../pics/puh.gif", // hinzugefügt
+                "../pics/sus2.gif", // hinzugefügt
+                "../pics/sus3.gif", // hinzugefügt
+                "../pics/sus4.gif" // hinzugefügt
+            ];
+            let randomIndex = Math.floor(Math.random() * images.length);
+            let button = document.getElementById("spawnButton");
+
+            let newImg = document.createElement("img");
+            newImg.src = images[randomIndex];
+            newImg.classList.add("random-image");
+
+            let maxWidth = window.innerWidth - 200; 
+            let maxHeight = window.innerHeight - 200;
+
+            let buttonRect = button.getBoundingClientRect();
+            let randomX, randomY;
+            do {
+                randomX = Math.floor(Math.random() * maxWidth);
+                randomY = Math.floor(Math.random() * maxHeight);
+            } while (
+                randomX < buttonRect.right && 
+                randomX + 200 > buttonRect.left &&
+                randomY < buttonRect.bottom &&
+                randomY + 200 > buttonRect.top
+            );
+
+            newImg.style.left = randomX + 'px';
+            newImg.style.top = randomY + 'px';
+            newImg.style.position = "absolute";
+
+            document.body.appendChild(newImg);
+
+            setTimeout(() => {
+                newImg.remove();
+            }, 10000);
+        }
+        function playSound() {
+            let sounds = [
+                "../sounds/Bruh.mp3"
+            ];
+            let randomIndex = Math.floor(Math.random() * sounds.length);
+            let audio = new Audio(sounds[randomIndex]);
+            audio.play();
+            moveSoundButton();
+        }
+
+        function moveSoundButton() {
+            let button = document.getElementById("soundButton");
+
+            // Sicherstellen, dass der Button relativ zum Viewport positioniert wird
+            button.style.position = "fixed";
+
+            // Berechne die maximalen X- und Y-Werte, sodass der Button im Fenster bleibt
+            let maxX = window.innerWidth - button.offsetWidth - 20; // 20px Sicherheitspuffer
+            let maxY = window.innerHeight - button.offsetHeight - 20;
+
+            // Zufällige Koordinaten generieren
+            let randomX = Math.floor(Math.random() * maxX);
+            let randomY = Math.floor(Math.random() * maxY);
+
+            // Position des Buttons setzen
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+
+
+    </script>
+</body>
+</html>
